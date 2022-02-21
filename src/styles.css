@@ -1,0 +1,55 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
+}
+h1 {
+  font-family: "Domine", serif;
+  font-weight: 600;
+  font-size: 50px;
+  color: #6e85b2;
+}
+
+.main-background {
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 1000px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.search-location-bar {
+  margin: 30px 0px 0px -10px;
+}
+.city,
+.forecast,
+.date-time {
+  margin-top: 15px;
+  padding: 20px 20px 0px 60px;
+}
+
+#temperature {
+  font-weight: 400;
+  font-size: 60px;
+  color: #36454f;
+}
+
+.weather-icon {
+  vertical-align: top;
+}
+
+.daily-weather {
+  text-align: center;
+  font-size: 22px;
+  margin: 35px 15px 15px 15px;
+  padding: 20px 20px;
+}
+
+.daily {
+  padding: 20px;
+}
+.input-group {
+  padding-left: 40px;
+  width: 480px;
+}
