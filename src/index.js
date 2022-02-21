@@ -90,8 +90,12 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp); //Performing math operators to ound up the numbers gotten from temperature in the Arrays object.
   let temperatureElement = document.querySelector("#temperature"); //
   let description = document.querySelector(".text-secondary"); //Where the description will be displayed.
+  let HumidityElement = document.querySelector("#Humidity"); //Where thecurrent weather humidity will be displayed
+  let windElement = document.querySelector("#wind"); //Where the weather speed will be displayed
   temperatureElement.innerHTML = `${temperature}°C`; //Where the temperature of the requested city will be displayed.
   description.innerHTML = response.data.weather[0].description; //To get the current waeather description i.e snow showers, rainfall, broken-clouds.
+  HumidityElement.innerHTML = response.data.main.humidity; //Getting the weather humidity that will be displayed
+  windElement.innerHTML = Math.round(response.data.wind.speed); //Getting the weather speed that will be displayed and using a math operator to round it up.
 }
 
 function getPosition(event) {
