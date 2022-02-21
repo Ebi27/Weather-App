@@ -87,9 +87,6 @@
                   <br>
                     Wind: <span id="wind"> 1</span>KM/H
                 </div>
-                <a href="#" id="celsius">°C</a>
-                <a href="#" id="fahreneit">°F</a>
-                <br />
                 <span class="text-secondary">
                   Snow Showers <br />1°C/-3°C<br />Feels like -5°</span
                 >
@@ -98,10 +95,12 @@
 
             <!--5-day weather forecast-->
             <div class="col-6 my-auto">
-              <span class="weather-icon">
-                <img src="images/snow.png" alt="snow" width="100px"
-              /></span>
-              <div id="temperature">-3°C</div>
+            <div class="clearfix weather-temperature">
+                <img src="images/snow.png" alt="snow" class="float-left" width="100px">
+              <div id="temperature">-3<span class="units">
+               <a href="#" id="celsius">°C/</a>
+                <a href="#" id="fahreneit">°F</a>
+                </span></div>
             </div>
           </div>
         </div>
