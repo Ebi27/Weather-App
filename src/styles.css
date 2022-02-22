@@ -80,3 +80,7 @@ cursor:default;
 .weather-temperature .active:hover{
 text-decoration:none;
 }
+.low {
+   color: #36454f;
+   font-size:18px;
+}
