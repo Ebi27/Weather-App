@@ -70,6 +70,7 @@ let celsiusTemperature=null;
 
 function showCelsius() {
   let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML= Math.round(celsiusTemperature);
   fahreneit.classList.remove("active"); //removing active class to the celsius link
 }
 let celsius = document.querySelector("#celsius");
