@@ -67,3 +67,16 @@ footer{
   align-items: center;
   padding-left: 180px;
 }
+.weather-temperature .units{
+position:relative;
+  font-size:16px;
+  top: -34px;
+  font-weight:100;
+}
+.weather-temperature .active{
+color: #36454f;
+cursor:default;
+}
+.weather-temperature .active:hover{
+text-decoration:none;
+}
