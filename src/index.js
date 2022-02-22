@@ -29,6 +29,31 @@ let month = months[today.getMonth()];
 let actualDate = document.querySelector(".date");
 actualDate.innerHTML = `${daylist[day]}, ${today.getDate()} ${month}`;
 
+//To display our forecast
+function displayForecast() { 
+  let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
+  let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
+    forecastHTML +
+    `
+                <div class="col-md-2 daily">
+                  <span class="text-secondary">
+                    MON
+                  </span>
+                  <br />
+                  <img class="icon" src="images/rain-cloud.jpg" alt="rainy" width="40px" />
+                  <br />
+                  <span class="max">
+                     5°
+                    </span> 
+                    <span class="low">
+                      1°
+                    </span>
+                </div>
+  `;
+       forecastHTML = forecast + `</div>`;
+       forecastElement.innerHTML = forecastHTML;
+}
+
 /******** declaring current time Variables *******/
 let hour = today.getHours();
 let minutes = today.getMinutes();
