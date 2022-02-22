@@ -59,17 +59,21 @@ input.addEventListener("submit", search);
 searchCity("krakow");
 
 /* Converting  Celsius to Fahrenheit */
-function showF() {
-  let valueF = document.querySelector(".temperature");
-  valueF.innerHTML = "-3°F";
+function displayFahreneitTemperature(event) {
+  event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+  let fahreneitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahreneitTemperature);
 }
-function showC() {
+let celsiusTemperature=null;
+
+function showCelsius() {
   let valueC = document.querySelector(".temperature");
   valueC.innerHTML = "-3°C";
 }
 let celsius = document.querySelector("#celsius");
 let fahreneit = document.querySelector("#fahreneit");
-fahreneit.addEventListener("click", showF);
+fahreneit.addEventListener("click", displayFahreneitTemperature);
 celsius.addEventListener("click", showC);
 
 // Geo-location
@@ -92,10 +96,19 @@ function showTemperature(response) {
   let description = document.querySelector(".text-secondary"); //Where the description will be displayed.
   let HumidityElement = document.querySelector("#Humidity"); //Where thecurrent weather humidity will be displayed
   let windElement = document.querySelector("#wind"); //Where the weather speed will be displayed
+  let iconElement = document.querySelector(".icon");
+
+  celsiusTemperature = response.data.main.temp; //declaring celsius which is a global variable.
+
   temperatureElement.innerHTML = `${temperature}°C`; //Where the temperature of the requested city will be displayed.
   description.innerHTML = response.data.weather[0].description; //To get the current waeather description i.e snow showers, rainfall, broken-clouds.
   HumidityElement.innerHTML = response.data.main.humidity; //Getting the weather humidity that will be displayed
   windElement.innerHTML = Math.round(response.data.wind.speed); //Getting the weather speed that will be displayed and using a math operator to round it up.
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);// Adding icons that match the weather
+    iconElement.setAttribute("alt",response.data.weather[0].description);
+  
 }
 
 function getPosition(event) {
