@@ -62,19 +62,20 @@ searchCity("krakow");
 function displayFahreneitTemperature(event) {
   event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
+    celsius.classList.remove("active"); //removing active class to the celcius link
   let fahreneitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperature.innerHTML = Math.round(fahreneitTemperature);
 }
 let celsiusTemperature=null;
 
 function showCelsius() {
-  let valueC = document.querySelector(".temperature");
-  valueC.innerHTML = "-3°C";
+  let temperatureElement = document.querySelector("#temperature");
+  fahreneit.classList.remove("active"); //removing active class to the celsius link
 }
 let celsius = document.querySelector("#celsius");
 let fahreneit = document.querySelector("#fahreneit");
 fahreneit.addEventListener("click", displayFahreneitTemperature);
-celsius.addEventListener("click", showC);
+celsius.addEventListener("click", showCelsius);
 
 // Geo-location
 function retrievePosition(position) {
