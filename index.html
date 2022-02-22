@@ -83,10 +83,13 @@
                 <span class="time">11:50am</span>
                 <br />
                 <div class="other">
-                    Humidity:<span id="Humidity">87</span>%
-                  <br>
-                    Wind: <span id="wind"> 1</span>KM/H
+                  Humidity:<span id="Humidity">87</span>%
+                  <br />
+                  Wind: <span id="wind"> 1</span>km/h
                 </div>
+                <a href="#" id="celsius">°C</a>
+                <a href="#" id="fahreneit">°F</a>
+                <br />
                 <span class="text-secondary">
                   Snow Showers <br />1°C/-3°C<br />Feels like -5°</span
                 >
@@ -95,12 +98,15 @@
 
             <!--5-day weather forecast-->
             <div class="col-6 my-auto">
-            <div class="clearfix weather-temperature">
-                <img src="images/snow.png" alt="snow" class="float-left" width="100px">
-              <div id="temperature">-3<span class="units">
-               <a href="#" id="celsius">°C/</a>
-                <a href="#" id="fahreneit">°F</a>
-                </span></div>
+              <span class="icon weather-temperature">
+                <img src="images/snow.png" alt="snow" width="100px"
+              /></span>
+              <div id="temperature">-3
+            <span class="units">
+              <a href="#" id="celsius" class="active">°C</a>
+              <a href="#" id="fahreneit">°F</a>
+              </span>   
+            </div>
             </div>
           </div>
         </div>
@@ -151,11 +157,24 @@
             </div>
           </div>
         </div>
-         <footer>
-        Coded by <a href="https://www.linkedin.com/in/ebi-kpemi-ogokimi/"target="_blank"> Ebi Kpemi-Ogokimi</a> and <a href="https://github.com/Ebi27/Weather-app" target="_blank">Open sourced </a> on GitHub and hosted on <a href="https://weather-ebi-app.netlify.app/"target="_blank">Netflify</a>
-      </footer>
+        <footer>
+          Coded by
+          <a
+            href="https://www.linkedin.com/in/ebi-kpemi-ogokimi/"
+            target="_blank"
+          >
+            Ebi Kpemi-Ogokimi</a
+          >
+          and
+          <a href="https://github.com/Ebi27/Weather-app" target="_blank"
+            >Open sourced
+          </a>
+          on GitHub and hosted on
+          <a href="https://weather-ebi-app.netlify.app/" target="_blank"
+            >Netflify</a
+          >
+        </footer>
       </div>
-     
     </div>
     <!--JavaScript File Link-->
     <script type="text/javascript" src="src/index.js"></script>
