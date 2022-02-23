@@ -29,31 +29,6 @@ let month = months[today.getMonth()];
 let actualDate = document.querySelector(".date");
 actualDate.innerHTML = `${daylist[day]}, ${today.getDate()} ${month}`;
 
-//To display our forecast
-function displayForecast() { 
-  let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
-  let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
-    forecastHTML +
-    `
-                <div class="col-md-2 daily">
-                  <span class="text-secondary">
-                    MON
-                  </span>
-                  <br />
-                  <img class="icon" src="images/rain-cloud.jpg" alt="rainy" width="40px" />
-                  <br />
-                  <span class="max">
-                     5°
-                    </span> 
-                    <span class="low">
-                      1°
-                    </span>
-                </div>
-  `;
-       forecastHTML = forecast + `</div>`;
-       forecastElement.innerHTML = forecastHTML;
-}
-
 /******** declaring current time Variables *******/
 let hour = today.getHours();
 let minutes = today.getMinutes();
@@ -127,7 +102,7 @@ function showTemperature(response) {
 
   celsiusTemperature = response.data.main.temp; //declaring celsius which is a global variable.
 
-  temperatureElement.innerHTML = `${temperature}°C`; //Where the temperature of the requested city will be displayed.
+  temperatureElement.innerHTML = `${temperature}`; //Where the temperature of the requested city will be displayed.
   description.innerHTML = response.data.weather[0].description; //To get the current waeather description i.e snow showers, rainfall, broken-clouds.
   HumidityElement.innerHTML = response.data.main.humidity; //Getting the weather humidity that will be displayed
   windElement.innerHTML = Math.round(response.data.wind.speed); //Getting the weather speed that will be displayed and using a math operator to round it up.
@@ -137,6 +112,33 @@ function showTemperature(response) {
     iconElement.setAttribute("alt",response.data.weather[0].description);
   
 }
+ //To display our forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
+  let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
+    let days=["TUES", "WED", "THUR", "FRI"];
+  days.forEach(function (day) { //Modifying the content of the forecast variable and addin the block of html code below
+  forecastHTML = forecastHTML+
+    `
+                <div class="col-md-2 daily">
+                  <span class="text-secondary weather-forecast-date">
+                    ${day}
+                  </span>
+                  <br />
+                  <img class="icon" src="images/rain-cloud.jpg" alt="rainy" width="40px" />
+                  <br />
+                  <span class="max">
+                     5°
+                    </span>
+                    <span class="low">
+                      1°
+                    </span>
+                </div>
+                </div>
+  `;
+       forecastHTML = forecast + `</div>`;
+       forecastElement.innerHTML = forecastHTML;
+});
 
 function getPosition(event) {
   event.preventDefault();
