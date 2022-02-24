@@ -110,17 +110,20 @@ function showTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);// Adding icons that match the weather
     iconElement.setAttribute("alt",response.data.weather[0].description);
-  
+
+  displayForecast(response.data.coord); //To ull the coordinates
 }
- //To display our forecast
+//To display our forecast
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
   let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
-    let days=["TUES", "WED", "THUR", "FRI"];
-  days.forEach(function (day) { //Modifying the content of the forecast variable and addin the block of html code below
-  forecastHTML = forecastHTML+
-    `
-                <div class="col-md-2 daily">
+  let days = ["TUES", "WED", "THUR", "FRI"];
+  days.forEach(function (day) {
+    //Modifying the content of the forecast variable and addin the block of html code below
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-2">
                   <span class="text-secondary weather-forecast-date">
                     ${day}
                   </span>
@@ -136,9 +139,10 @@ function displayForecast() {
                 </div>
                 </div>
   `;
-       forecastHTML = forecast + `</div>`;
-       forecastElement.innerHTML = forecastHTML;
-});
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
 
 function getPosition(event) {
   event.preventDefault();
