@@ -81,10 +81,14 @@ footer{
 .active:hover {
   text-decoration: none;
 }
+.weather-forecast-temperatures{
+  color:000;
+}
 .weather-forecast-temperature-min{
    color: #36454f;
-   font-size:18px;
+   font-size:15px;
+     opacity:0.6;
 }
 .weather-forecast-date{
-   color: #36454f;
+   opacity:0.6;
 }
