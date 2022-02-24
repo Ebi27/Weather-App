@@ -89,7 +89,44 @@ function retrievePosition(position) {
   console.log(apiUrl); //apiURL with which the details with be fetchd with.
   axios.get(apiUrl).then(showTemperature); //Calling the function with Axios
 }
-
+//To display our forecast
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
+  let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
+  let days = ["TUES", "WED", "THURS", "FRI"];
+  days.forEach(function (day) {
+    //Modifying the content of the forecast variable and addin the block of html code below
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-3">
+                  <div class="text-secondary weather-forecast-date">
+                    ${day}
+                  </span>
+                  <br />
+                  <img class="icon" src="images/rain-cloud.jpg" alt="rainy" width="40px" />
+                  <br />
+                  <span class="max">
+                     5°
+                    </span>
+                    <span class="low">
+                      1°
+                    </span>
+                </div>
+  `;
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+function getForecast(coordinates) {
+  //Defining the function for coordinates
+  console.log(coordinates); // To send the coordinates to the function, which gets the coordinates response from the api and gives us back the coordinate of the city
+  let apikey = "d487935bcc828b8e96ad212476090dba";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+} 
 function showTemperature(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
@@ -111,37 +148,7 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);// Adding icons that match the weather
     iconElement.setAttribute("alt",response.data.weather[0].description);
 
-  displayForecast(response.data.coord); //To ull the coordinates
-}
-//To display our forecast
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
-  let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
-  let days = ["TUES", "WED", "THUR", "FRI"];
-  days.forEach(function (day) {
-    //Modifying the content of the forecast variable and addin the block of html code below
-    forecastHTML =
-      forecastHTML +
-      `
-                <div class="col-2">
-                  <span class="text-secondary weather-forecast-date">
-                    ${day}
-                  </span>
-                  <br />
-                  <img class="icon" src="images/rain-cloud.jpg" alt="rainy" width="40px" />
-                  <br />
-                  <span class="max">
-                     5°
-                    </span>
-                    <span class="low">
-                      1°
-                    </span>
-                </div>
-                </div>
-  `;
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
-  });
+  displayForecast(response.data.coord); //To pull the coordinates
 }
 
 function getPosition(event) {
