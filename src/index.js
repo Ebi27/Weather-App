@@ -101,7 +101,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast"); //Selecting our element usinf document.querySelector
   let forecastHTML = `<div class="row">`; // Creating a loop and concatenating the string to the existing string
   forecast.forEach(function (forecastDay, index) { //To loop through the Array
-     if (index < 6) {
+     if (index < 6) { //So we get 6days 
     //Modifying the content of the forecast variable and adding the block of html code below
     forecastHTML =
       forecastHTML +
