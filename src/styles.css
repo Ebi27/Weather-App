@@ -92,3 +92,25 @@ footer{
 .weather-forecast-date{
    opacity:0.6;
 }
+/* Responsive */
+ @media (max-width:1200px){
+.input-group {
+  padding-left: 20px;
+  width: 400px;
+}
+#temperature {
+  font-weight: 400;
+  font-size: 50px;
+  color: #36454f;
+  padding-right:500px;
+  justify-items: center;
+}
+footer{
+  align-items: center;
+  padding-left: 20px;
+}
+.float-left{
+  float: left;
+}
+
+ }
