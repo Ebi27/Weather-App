@@ -96,13 +96,7 @@ footer{
  @media (max-width:1200px){
 .input-group {
   padding-right: 20px;
-  width: 380px;
-}
-#temperature {
-  font-weight: 400;
-  font-size: 50px;
-  color: #36454f;
-
+  width: 440px;
 }
 footer{
   align-items: center;
