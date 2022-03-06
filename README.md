@@ -40,7 +40,7 @@ Users should be able to:
 
 ## My process
 
-I built a fully functional weather application with the use of API integration from Open weather App where you can search for any city or getting the current weather of your current location by clicking the 'Current location button'.  I started by creating the structure of the page using HTML. This began with creating the container, putting in some fake datas to replicate what i wanted. Created the grid using flexbox. I then styled the page using css then i went in with Javascript by declaring the variables for date, day, month and time. Created a function for the search engine while also changing the innerHTML to the search input. I converted the Celsius and Fahrenheit. next, while also creating functions to display them and pull geolocation and diaplay the 6-day forecast. I lastly created a function to display the main temperature. 
+I built a fully functional weather application with the use of API integration from Open weather App where you can search for any city or getting the current weather of your current location by clicking the 'Current location button'.  I started by creating the structure of the page using HTML. This began with creating the container, putting in some fake datas to replicate what i wanted. Created the grid using flexbox. I styled the page using css then went in with Javascript by declaring the variables for date, day, month and time. I Created a function for the search engine while also changing the innerHTML to the search input. I converted the Celsius and Fahrenheit next, and created functions to display them, pull geolocation and display the 6-day forecast. I lastly created a function to display the main temperature. 
 
 ### Built with
 
