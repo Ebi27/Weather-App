@@ -1,6 +1,6 @@
 # Weather App
 
-This is my final project for the SheCodes Plus class [SheCodes](hhttps://www.shecodes.io/). 
+This is my final project for the [SheCodes](hhttps://www.shecodes.io/) Plus class . 
 
 ## Table of contents
 
