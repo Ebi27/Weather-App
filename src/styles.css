@@ -95,11 +95,14 @@ footer{
 /* RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE */
 @media (max-width: 457px) { 
    #inlineFormInput{
-   width:50px;
+   width:30px;
  } 
  .input-group {
-  padding-right: 10px;
+  padding-right: 0px;
 
+}
+#button2{
+  padding-left:20px;
 }
 
 #temperature{
@@ -117,9 +120,10 @@ footer{
 .city,
 .forecast,
 .date-time {
-  margin-top: 10px;
+  margin-top: 18px;
   padding: 10px 10px 0px 30px;
    width: 100%;
+   overflow-x: hidden;
 }
  .units  {
   position: relative;
